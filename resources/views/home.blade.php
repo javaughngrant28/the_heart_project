@@ -308,28 +308,6 @@
 
 
 
-        <div class="card w-full h-full">
-
-            <div class="flex h-full w-full flex-col justify-end">
-
-                {{--                TODO ADD program name and style crard--}}
-                <div style="background-image: url('https://source.unsplash.com/random')" class="flex justify-center
-                items-center h-full">PROGRAM NAME
-                </div>
-
-                {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
-
-                <button class=' h-8 flex btn w-full bg-green-400 items-center justify-center'>VIEW</button>
-
-                {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
-
-            </div>
-
-
-        </div>
-
-
-
 
 
     </div>

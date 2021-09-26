@@ -1,0 +1,26 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #00D6E8;
+}
+
+.f_c{
+    background-color: #009CFF;
+}
+
+
+/*-------------THIS IS THE COLOR OF THE FORM-------------------------------*/
+
+
+.sub_min{
+    background-color: #00D6E8;
+
+}
+
+.sub_min:hover{
+    background-color: #00E9B9;
+}
+/*-------------THIS IS THE COLOR OF THE submit button-------------------------------*/
