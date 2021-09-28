@@ -50,9 +50,28 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+
+            'fist_name' => ['required', 'string', 'max:255'],
+
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+
+            'last_name' => ['required', 'string', 'min:3'],
+
+            'address' => ['required', 'string', 'min:8'],
+
+            'trn' => ['required', 'string', 'min:10', 'unique:users','regex:/^[-0-9\+]+$/'],
+
+            'date' => ['required'],
+
+            'f_number' => ['required', 'min:7','regex:/^[-0-9\+]+$/'],
+
+            'gender' => ['required'] ,
+
+            'qualification' => ['required','mimes:jpg,jpeg,png'],
+
+            'pfp' => ['required', 'mimes:jpg,jpeg,png'],
         ]);
     }
 
@@ -65,9 +84,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'f_name' => $data['fist_name'],
+            'l_name' => $data['last_name'],
             'password' => Hash::make($data['password']),
+            'email' => $data['email'],
+            'address' => $data['address'],
+            'trn' => $data['trn'],
+            'd.o.b' => $data['date'],
+            'tel_number' => $data['f_number'],
+            'gender' => $data['gender'],
+            'user_qualification_path' => $data['qualification'],
+            'user_pfp_path' => $data['pfp'],
         ]);
     }
 }

@@ -3,17 +3,23 @@
     box-sizing: border-box;
 }
 
+
+
 body{
-    background-color: #00D6E8;
+    background-color: #95D4FD;
 }
 
-.f_c{
-    background-color: #009CFF;
+
+.navBar{
+    background-color: #8FB8EE;
 }
 
 
 /*-------------THIS IS THE COLOR OF THE FORM-------------------------------*/
 
+.f_div_h{
+    background-color: #8FB8EE;;
+}
 
 .sub_min{
     background-color: #00D6E8;
