@@ -37,7 +37,7 @@
         <div class = "flex h-8  rounded-b-full ">
 
             <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
+                <p class="flex self-end font-bold " >Name</p>
             </span>
 
             <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
@@ -46,122 +46,13 @@
 
         </div>
 
-
-        <div class = "flex h-8">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
-            </span>
-
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
-                Javaughn Grant
-            </span>
-
-        </div>
-
-
-
-
-        <div class = "flex h-8">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
-            </span>
-
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
-                Javaughn Grant
-            </span>
-
-        </div>
-
-
-
-
-
-        <div class = "flex h-8">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
-            </span>
-
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
-                Javaughn Grant
-            </span>
-
-        </div>
-
-
-
-
-
-
-        <div class = "flex h-8">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
-            </span>
-
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
-                Javaughn Grant
-            </span>
-
-        </div>
-
-
-
-
-
-
-
-        <div class = "flex h-8">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
-            </span>
-
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
-                Javaughn Grant
-            </span>
-
-        </div>
-
-
-
-
-
-
-
-        <div class = "flex h-8">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
-            </span>
-
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
-                Javaughn Grant
-            </span>
-
-        </div>
-
-
-
-
-
-
-        <div class = "flex h-8">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end " >Name</p>
-            </span>
-
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
-                Javaughn Grant
-            </span>
-
-        </div>
 
         <div  class = "flex h-8 justify-center items-center bg-green-400 btn ">
             update
+        </div>
+
+        <div  class = "flex h-8 justify-center items-center bg-red-500 btn ">
+            download
         </div>
 
 
