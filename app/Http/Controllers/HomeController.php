@@ -28,6 +28,6 @@ class HomeController extends Controller
 
     public function loadHomeView()
     {
-        return view('mine');
+        return view('adminList');
     }
 }
