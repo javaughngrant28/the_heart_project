@@ -22,12 +22,14 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/',[HomeController::class,'loadHomeView'])->name('homePage');
 
-Route::get('/logIn',[LogInController::class,'loadLogInView'])->name('logInPage');
-
-Route::get('/signUp',[LogInController::class,'loadSignUpView'])->name('signUpPage');
+//Route::get('/logIn',[LogInController::class,'loadLogInView'])->name('logInPage');
+//
+//Route::get('/signUp',[LogInController::class,'loadSignUpView'])->name('signUpPage');
 
 Route::get('/profile',[ProfileController::class,'profileView'])->name('profilePage');
+
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 

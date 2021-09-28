@@ -1,3 +1,62 @@
-body{
-    background-color: #00D6E8
+
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
 }
+
+body{
+    background-color: #95D4FD;
+    display: flex;
+    justify-content: center;
+
+}
+
+.main_pro{
+
+    width: 90vw;
+
+
+    background-color: red;
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows: minmax(25rem,30rem) auto;
+
+}
+/*--THE MAIN DIV THAT WILL SET THE LAYOUT for user profile and basic information--*/
+
+.i_one{
+
+    width: 100%;
+
+}
+
+.i_one div{
+    width: 28rem;
+    height: 20rem;
+}
+
+
+
+.i_two{
+
+    width: 100%;
+    border: 2px solid wheat;
+
+
+}
+
+.t_r{
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 2px;
+}
+
+.t_l{
+    border-bottom: 2px solid black;
+
+}
+
+/*--THE ITEMS GOING INSIDE THE PROFILE GRID--*/

@@ -9,19 +9,177 @@
     <link href="{{asset('css/profile.css')}}" rel="stylesheet">
 
     <title>profile</title>
+
 </head>
 
 
 <body>
 
 
-<div class="flex ">
-                    <span
-                        class="text-sm border bg-blue-50 font-bold uppercase border-2 rounded-l px-4 py-2 bg-gray-50 whitespace-no-wrap w-2/6">Name:</span>
-    <input
-        class="px-4 border-l-0 cursor-default border-gray-300 focus:outline-none  rounded-md rounded-l-none shadow-sm -ml-1 w-4/6"
-        type="text" value="Ismael Contreras" readonly/>
+<div class = "main_pro grid">
+
+    <div class="bg-yellow-200 i_one flex justify-center items-center">
+
+        <div class="flex w-10 h-8/12 bg-pink-700 justify-center items-center">
+{{--            <img src="{{url('https://source.unsplash.com/random')}}" class="w-full h-full">--}}
+        </div>
+
+    </div>
+
+{{--    ------------------- PROFILE PHOTO-----------------------}}
+
+
+    <div class="bg-white i_two mb-5 mt-5">
+
+
+
+
+        <div class = "flex h-8  rounded-b-full ">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+
+        <div class = "flex h-8">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+
+
+
+        <div class = "flex h-8">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+
+
+
+
+        <div class = "flex h-8">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+
+
+
+
+
+        <div class = "flex h-8">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+
+
+
+
+
+
+        <div class = "flex h-8">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+
+
+
+
+
+
+        <div class = "flex h-8">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+
+
+
+
+
+        <div class = "flex h-8">
+
+            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
+                <p class="flex self-end " >Name</p>
+            </span>
+
+            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+                Javaughn Grant
+            </span>
+
+        </div>
+
+        <div  class = "flex h-8 justify-center items-center bg-green-400 btn ">
+            update
+        </div>
+
+
+
+    </div>
+
+{{--    ---------------- THE BASIC INFORMATION-------------------}}
+
+
 </div>
+
+{{------------- DIV THAT HOLDS THE PROFILE PHOTO AND BASIC INFORMATION-----------}}
+
+
+
+
+
+
 
 
 </body>
