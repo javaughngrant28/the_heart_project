@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.screen_div {
+    background-color: #95D4FD;
+
+    /*grid-row-gap: 1rem;*/
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 5rem auto 5rem;
+
+    grid-template-areas:
+                "top"
+                "mid_top"
+                "mid"
+                "mid_lower";
+
+}
+
+/*------------SCREEN LAYOUT GRID----------------*/
+
+nav {
+    /*border: 10px solid black;*/
+    grid-area: top;
+    /*height: 5rem;*/
+
+    grid-template-columns: [col-start] minmax(1px, 10rem) [col-2] minmax(13rem, 1fr) [col-3] minmax(5rem, 10rem) [col-end];
+    grid-template-rows:auto;
+
+    grid-template-areas:
+                "side1 main side2";
+
+    background-color: #8FB8EE;
+}
+
+.side1 {
+    grid-area: side1;
+    /*border: 2px solid white;*/
+}
+
+.main {
+    grid-area: main;
+    /*border: 2px solid yellow;*/
+}
+
+.side2 {
+    grid-area: side2;
+    /*border: 2px solid red;*/
+}
+
+/*--------- THE NAV -----------------*/
+
+.mid_top {
+    grid-area: mid_top;
+
+    justify-self: center;
+
+    margin-top: 2rem;
+
+    width: 98vw;
+
+    /*background-color: #8FB8EE;*/
+
+    justify-items: center;
+    align-items: center;
+}
+
+/*-----------THE FAV COURSE BUTTON----------*/
+
+.card_holder {
+    justify-self: center;
+    width: 98vw;
+
+    grid-area: mid;
+    /*background-color: #8FB8EE;*/
+
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 25rem));
+
+    grid-auto-rows: 20rem;
+
+    justify-content: center;
+    align-content: space-around;
+
+    column-gap: 1.5rem;
+    row-gap: 5rem;
+
+}
+
+
+.card {
+    background-color: white;
+    border: 3px solid white;
+}
+
+/*-----------THE COURSES CARDS--------------------------*/
+
+.mid_lower {
+    grid-area: mid_lower;
+
+    width: 98vw;
+    justify-self: center;
+    background-color: #8FB8EE;
+    margin-bottom: 2.5rem;
+}
+.hov a{
+    background-color: #8FB8EE;
+}
+
+
+.b_c{
+    background-color: #F9F871;
+    color: black;
+}
+/* --------------VIEW MORE COURSES BUTTON-------------------*/
+
+

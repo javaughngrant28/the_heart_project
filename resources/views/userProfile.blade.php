@@ -16,45 +16,138 @@
 <body>
 
 
-<div class = "main_pro grid">
+<form action="#" class="main_pro grid">
 
-    <div class="bg-yellow-200 i_one flex justify-center items-center">
+    <div class="gid i_one">
 
-        <div class="flex w-10 h-8/12 bg-pink-700 justify-center items-center">
-{{--            <img src="{{url('https://source.unsplash.com/random')}}" class="w-full h-full">--}}
-        </div>
 
     </div>
 
-{{--    ------------------- PROFILE PHOTO-----------------------}}
+    {{--    ------------------- PROFILE PHOTO-----------------------}}
 
 
-    <div class="bg-white i_two mb-5 mt-5">
+    <div class=" i_two mb-5 mt-5">
 
 
+        <div class="flex  rounded-b-full ">
 
-
-        <div class = "flex h-8  rounded-b-full ">
-
-            <span class = "bg-purple-400 w-2/5 flex flex-col justify-center t_r " >
-                <p class="flex self-end font-bold " >Name</p>
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">Name</p>
             </span>
 
-            <span class="bg-gray-400 w-full  flex justify-center items-center t_l">
+            <span class=" w-full  flex justify-center items-center t_l">
                 Javaughn Grant
             </span>
 
         </div>
 
+        <div class="flex rounded-b-full ">
 
-        <div  class = "flex h-8 justify-center items-center bg-green-400 btn ">
-            update
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">Gender</p>
+            </span>
+
+            <span class=" w-full  flex justify-center items-center t_l">
+                Male
+            </span>
+
         </div>
 
-        <div  class = "flex h-8 justify-center items-center bg-red-500 btn ">
-            download
+
+        <div class="flex  rounded-b-full ">
+
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">Birth Date</p>
+            </span>
+
+            <span class=" w-full  flex justify-center items-center t_l">
+                24/02/2000
+            </span>
+
         </div>
 
+
+        <div class="flex  rounded-b-full ">
+
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">TRN</p>
+            </span>
+
+            <span class=" w-full  flex justify-center items-center t_l">
+                12345678901
+            </span>
+
+        </div>
+
+
+        <div class="flex  rounded-b-full ">
+
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">Address</p>
+            </span>
+
+            <span class=" w-full  flex justify-center items-center t_l">
+                I live at my home
+            </span>
+
+        </div>
+
+
+
+
+        <div class="flex  rounded-b-full ">
+
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">Email-Address</p>
+            </span>
+
+            <span class=" w-full  flex justify-center items-center t_l">
+                javaughngrant@gmail.com
+            </span>
+
+        </div>
+
+
+
+        <div class="flex  rounded-b-full ">
+
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">Phone Number</p>
+            </span>
+
+            <span class=" w-full  flex justify-center items-center t_l">
+                x-xxx-xxx-xxxx
+            </span>
+
+        </div>
+
+
+
+
+        <div class="flex  rounded-b-full ">
+
+            <span class=" w-2/5 flex flex-col justify-center t_r ">
+                <p class="flex self-end font-bold ">Qualification</p>
+            </span>
+
+            <span class=" w-full  flex justify-center items-center t_l">
+                myQualification.docx
+            </span>
+
+        </div>
+
+
+
+
+
+
+        <div class="flex h-8 justify-center items-center btn mt-1 bg-yellow-200 hover:bg-red-700 ">
+            update information
+        </div>
+
+        <div class="flex h-8 justify-center items-center btn mt-1 bg-yellow-200 hover:bg-green-400">
+            download information
+        </div>
 
 
     </div>
@@ -65,7 +158,7 @@
     <div class="text-gray-900 bg-gray-200">
         <div class="p-4 flex">
             <h1 class="text-3xl">
-                Users
+                Course Applications
             </h1>
         </div>
         <div class="px-3 py-4 flex justify-center">
@@ -73,114 +166,39 @@
                 <tbody>
                 <tr class="border-b">
                     <th class="text-left p-3 px-5">Name</th>
-                    <th class="text-left p-3 px-5">Email</th>
-                    <th class="text-left p-3 px-5">Role</th>
-                    <th></th>
+                    <th class="text-left p-3 px-5">status</th>
+                    <th class="text-left p-3 px-5"></th>
                 </tr>
                 <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
+
+                    <td class="p-3 px-5">web dev</td>
+
+                    <td class="p-3 px-5">pending</td>
+
+                    <td class="p-3 px-5 flex justify-end">
+                        <button type="button"
+                                class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                            Approve
+                        </button>
+
+                        <button type="button"
+                                class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                            Decline
+                        </button>
+
                     </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
-                <tr class="border-b hover:bg-orange-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
+
                 </tr>
 
-                <tr class="border-b hover:bg-orange-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
-                <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
-                <tr class="border-b hover:bg-orange-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
-                <tr class="border-b hover:bg-orange-100 bg-gray-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
-                <tr class="border-b hover:bg-orange-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
-                <tr class="border-b hover:bg-orange-100">
-                    <td class="p-3 px-5"><input type="text" value="user.name" class="bg-transparent"></td>
-                    <td class="p-3 px-5"><input type="text" value="user.email" class="bg-transparent"></td>
-                    <td class="p-3 px-5">
-                        <select value="user.role" class="bg-transparent">
-                            <option value="user">user</option>
-                            <option value="admin">admin</option>
-                        </select>
-                    </td>
-                    <td class="p-3 px-5 flex justify-end"><button type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Save</button><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
-                </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
 
-</div>
+</form>
 
 {{------------- DIV THAT HOLDS THE PROFILE PHOTO AND BASIC INFORMATION-----------}}
-
-
-
-
-
-
 
 
 </body>

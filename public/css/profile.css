@@ -15,47 +15,75 @@ body{
 
 .main_pro{
 
+    /*background-color: red;*/
+
     width: 90vw;
-
-
-    background-color: red;
-
     grid-template-columns: 1fr;
 
-    grid-template-rows: minmax(25rem,30rem) auto;
+    grid-template-areas:
+        "one"
+        "two"
+        "two";
+
+    grid-template-rows: minmax(0rem,30rem) auto auto;
 
 }
 /*--THE MAIN DIV THAT WILL SET THE LAYOUT for user profile and basic information--*/
 
 .i_one{
 
-    width: 100%;
+    grid-area: one;
 
-}
+    width: 40%;
+    height: 60%;
 
-.i_one div{
-    width: 28rem;
-    height: 20rem;
+    justify-self: center;
+    align-self: center;
+
+    border: 1.5rem groove #8FB8EE;
+    background-color: white;
+
+
+
 }
 
 
 
 .i_two{
 
+    grid-area: two;
+
     width: 100%;
-    border: 2px solid wheat;
+    /*border: 2px solid wheat;*/
+
 
 
 }
 
 .t_r{
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-bottom: 3px groove black;
+    border-right: 3px groove black;
+
     border-radius: 2px;
+
+    height: 3rem;
+    margin-top: 1rem;
+
+    background-color: #8FB8EE;
+
+    pointer-events: none;
+
+    color: black;
 }
 
 .t_l{
-    border-bottom: 2px solid black;
+    /*border-bottom: 2px solid black;*/
+    margin-top: 1rem;
+
+    background-color: #F1FBFF;
+    color: black;
+
+    pointer-events: none;
 
 }
 

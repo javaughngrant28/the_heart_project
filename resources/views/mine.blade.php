@@ -6,127 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link href="{{asset('css/homeStyle.css')}}" rel="stylesheet">
     {{--    TODO the borders and overall style/color pallet need to be chosen--}}
     <title>Home</title>
-
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        .screen_div {
-            background-color: palevioletred;
-
-            /*grid-row-gap: 1rem;*/
-
-            grid-template-columns: 1fr;
-            grid-template-rows: 5rem 5rem auto 5rem;
-
-            grid-template-areas:
-                "top"
-                "mid_top"
-                "mid"
-                "mid_lower";
-
-        }
-
-        /*------------SCREEN LAYOUT GRID----------------*/
-
-        nav {
-            /*border: 10px solid black;*/
-            grid-area: top;
-            /*height: 5rem;*/
-
-            grid-template-columns: [col-start] minmax(1px, 10rem) [col-2] minmax(13rem, 1fr) [col-3] minmax(5rem, 10rem) [col-end];
-            grid-template-rows:auto;
-
-            grid-template-areas:
-                "side1 main side2";
-        }
-
-        .side1 {
-            grid-area: side1;
-            border: 2px solid white;
-        }
-
-        .main {
-            grid-area: main;
-            border: 2px solid yellow;
-        }
-
-        .side2 {
-            grid-area: side2;
-            border: 2px solid red;
-        }
-
-       /*--------- THE NAV -----------------*/
-
-        .mid_top{
-            grid-area: mid_top;
-
-            justify-self: center;
-
-            margin-top: 2rem;
-
-            width: 98vw;
-
-            background-color: yellow;
-
-            justify-items: center;
-            align-items: center;
-        }
-
-        /*-----------THE FAV COURSE BUTTON----------*/
-
-        .card_holder {
-            justify-self: center;
-            width: 98vw;
-
-            grid-area: mid;
-            background-color: yellow;
-
-            grid-template-columns: repeat(auto-fill, minmax(10rem, 25rem));
-
-            grid-auto-rows: 20rem;
-
-            justify-content: center;
-            align-content: space-around;
-
-            column-gap: 1.5rem;
-            row-gap: 5rem;
-
-        }
-
-        .card_r {
-            background-color: white;
-            border: 3px solid mediumturquoise;
-        }
-
-        .card {
-            background-color: white;
-            border: 3px solid olivedrab;
-        }
-
-        /*-----------THE COURSES CARDS--------------------------*/
-
-        .mid_lower{
-            grid-area: mid_lower;
-
-            width: 98vw;
-            justify-self: center;
-            background-color: yellow;
-            margin-bottom: 2.5rem;
-        }
-
-       /* --------------VIEW MORE COURSES BUTTON-------------------*/
-
-
-
-    </style>
 
 </head>
 
@@ -136,50 +18,69 @@
 <div class=" grid screen_div">
 
     {{----------------------------This contains the navigation bar!!--------------------------------------}}
-    <nav class="bg-blue-500 w-full grid ">
+    <nav class=" w-full grid ">
 
-        <div class="side1 bg-blue-500">
+        <div class="side1  ">
             {{--            THIS DIVE IS for space!!--}}
         </div>
 
         {{--        This div is where the welcome text will be!--}}
-        <div class="main bg-blue-500 flex justify-center items-center">
-            <span class> Lorem ipfsum dolor sit amet, consectetur adipisicing elit. Eligendi, possimus. </span>
+        <div style="font-size: 1.2rem" class="main pointer-events-none flex justify-center items-center text-white font-extrabold">
+            <span class> WELCOME TO AMBER ACADEMY  </span>
         </div>
-        {{--        TODO change the welcome text to be short and randomized--}}
 
         {{--        This div is where contains the user LogIN button--}}
-        <div class="side2 bg-blue-500 flex justify-center items-center">
-            <span>LogIn</span>
+        <div class="side2 flex justify-center items-center hov ">
+            @guest
+{{--                <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
+{{--                @if (Route::has('register'))--}}
+{{--                    <a class="" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
+{{--                @endif--}}
+            @else
+
+                <a href="{{ route('logout') }}"
+                   class="btn w-full h-full border-none hover:bg-blue-400"
+                   onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                    {{ csrf_field() }}
+                </form>
+            @endguest
+
         </div>
-        {{--        TODO change the style and make it a button to like to logIn page--}}
 
     </nav>
 
 
     {{---------------------THIS IS THE DIV THAT HOLDS ALL THE ADVERTISEMENTS ----------------------------}}
 
-    <div class = "mid_top flex justify-self-start">
-        <span class = "bg-red-500 h-full flex justify-center items-center"> Popular courses</span></div>
+    <div  class = "mid_top flex justify-self-start">
+        <span style="border-top: 2px solid black; border-left: 2px solid black; background-color: #8FB8EE;
+        border-right: 2px solid black;  border-top-left-radius: 5px" class = "font-bold pointer-events-none
+        bg-yellow-300 text-white pr-1 bg-red-500
+        h-full flex justify-center items-center"> Some courses</span></div>
 
-    <div class="card_holder grid w-full">
+    <div style="border: 2px solid black; border-top: none; background-color: #8FB8EE;"
+         class="card_holder grid w-full">
 
-        {{--TODO Add atl property with images--}}
+
 
         {{--        TODO STYLE BUTTONS AND ADD LINKS--}}
 
-        <div class="card_r w-full h-full">
+        <div class="card w-full h-full">
 
             <div class="flex h-full w-full flex-col justify-end">
 
                 {{--                TODO ADD program name and style crard--}}
                 <div style="background-image: url('https://source.unsplash.com/random')" class=" flex justify-center
-                items-center h-full"><span class = "no_blur">PROGRAM NAME</span>
+                items-center h-full"><span style="font-size: 2rem" class = "font-extrabold pointer-events-none
+                text-black">PROGRAM NAME</span>
                 </div>
 
                 {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
 
-                <button class=' h-8 flex btn w-full bg-green-400 items-center justify-center'>VIEW</button>
+                <button class=' h-8 b_c hover:text-white flex font-extrabold text-white btn w-full
+                bg-green-400 items-center justify-center'>VIEW</button>
 
                 {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
 
@@ -191,28 +92,6 @@
 
 
 
-        <div class="card w-full h-full">
-
-            <div class="flex h-full w-full flex-col justify-end">
-
-                {{--                TODO ADD program name and style crard--}}
-                <div style="background-image: url('https://source.unsplash.com/random')" class="flex justify-center
-                items-center h-full">
-                    PROGRAM NAME
-                </div>
-
-                {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
-
-                <button class=' h-8 flex btn w-full bg-green-400 items-center justify-center'>VIEW</button>
-
-                {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
-
-            </div>
-
-
-        </div>
-
-
 
 
 
@@ -221,90 +100,24 @@
             <div class="flex h-full w-full flex-col justify-end">
 
                 {{--                TODO ADD program name and style crard--}}
-                <div style="background-image: url('https://source.unsplash.com/random')" class="flex justify-center
-                items-center h-full">PROGRAM NAME
+                <div style="background-image: url('https://source.unsplash.com/random')" class=" flex justify-center
+                items-center h-full"><span style="font-size: 2rem" class = "font-extrabold pointer-events-none
+                text-black">PROGRAM NAME</span>
                 </div>
 
                 {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
 
-                <button class=' h-8 flex btn w-full bg-green-400 items-center justify-center'>VIEW</button>
+                <button class=' h-8 b_c hover:text-white flex font-extrabold text-white btn w-full
+                bg-green-400 items-center justify-center'>VIEW</button>
 
                 {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
 
             </div>
 
+            {{-------------THIS IS THE IMAGE THAT WILL BE DISPLAYED ON THE ADVERTISEMENT CARD---------------}}
 
         </div>
 
-
-
-
-        <div class="card w-full h-full">
-
-            <div class="flex h-full w-full flex-col justify-end">
-
-                {{--                TODO ADD program name and style crard--}}
-                <div style="background-image: url('https://source.unsplash.com/random')" class="flex justify-center
-                items-center h-full">PROGRAM NAME
-                </div>
-
-                {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
-
-                <button class=' h-8 flex btn w-full bg-green-400 items-center justify-center'>VIEW</button>
-
-                {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
-
-            </div>
-
-
-        </div>
-
-
-
-
-
-        <div class="card w-full h-full">
-
-            <div class="flex h-full w-full flex-col justify-end">
-
-                {{--                TODO ADD program name and style crard--}}
-                <div style="background-image: url('https://source.unsplash.com/random')" class="flex justify-center
-                items-center h-full">PROGRAM NAME
-                </div>
-
-                {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
-
-                <button class=' h-8 flex btn w-full bg-green-400 items-center justify-center'>VIEW</button>
-
-                {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
-
-            </div>
-
-
-        </div>
-
-
-
-
-        <div class="card w-full h-full">
-
-            <div class="flex h-full w-full flex-col justify-end">
-
-                {{--                TODO ADD program name and style crard--}}
-                <div style="background-image: url('https://source.unsplash.com/random')" class="flex justify-center
-                items-center h-full">PROGRAM NAME
-                </div>
-
-                {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
-
-                <button class=' h-8 flex btn w-full bg-green-400 items-center justify-center'>VIEW</button>
-
-                {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
-
-            </div>
-
-
-        </div>
 
 
 
@@ -315,7 +128,7 @@
 
 
     <div class = "mid_lower">
-        <a class = "btn bg-purple-400 h-full flex justify-center items-center">VIEW ALL</a>
+        <a class = "btn hover:text-white flex font-extrabold text-white b_c h-full flex justify-center items-center">VIEW ALL</a>
     </div>
 
 </div>

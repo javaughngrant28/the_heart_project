@@ -17,6 +17,11 @@
 
     <link href="{{asset('css/register.css')}}" rel="stylesheet">
 
+    @extends('layouts.app')
+
+    @section('content')
+
+
 </head>
 
 <body class=" antialiased leading-none font-sans">

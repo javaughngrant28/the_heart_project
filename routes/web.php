@@ -20,8 +20,6 @@ use App\Http\Controllers\ProfileController;
 //    return view('welcome');
 //});
 
-Route::get('/',[HomeController::class,'loadHomeView'])->name('homePage');
-
 //Route::get('/logIn',[LogInController::class,'loadLogInView'])->name('logInPage');
 //
 //Route::get('/signUp',[LogInController::class,'loadSignUpView'])->name('signUpPage');
@@ -30,6 +28,6 @@ Route::get('/profile',[ProfileController::class,'profileView'])->name('profilePa
 
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

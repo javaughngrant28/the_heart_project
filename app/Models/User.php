@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
         'address',
         'trn',
-        'd.o.b',
+        'd_o_b',
         'tel_number',
         'gender',
         'user_qualification_path',

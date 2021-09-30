@@ -69,11 +69,12 @@ class RegisterController extends Controller
 
             'gender' => ['required'] ,
 
-            'qualification' => ['required','mimes:jpg,jpeg,png'],
+            'qualification' => ['required','mimes:doc,docx,dot'],
 
             'pfp' => ['required', 'mimes:jpg,jpeg,png'],
         ]);
     }
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -83,6 +84,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $pfp_path = $data['pfp']->store('pictures_and_docs');
+        $doc_path = $data['qualification']->store('pictures_and_docs');
         return User::create([
             'f_name' => $data['fist_name'],
             'l_name' => $data['last_name'],
@@ -90,11 +93,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'address' => $data['address'],
             'trn' => $data['trn'],
-            'd.o.b' => $data['date'],
+            'd_o_b' => $data['date'],
             'tel_number' => $data['f_number'],
             'gender' => $data['gender'],
-            'user_qualification_path' => $data['qualification'],
-            'user_pfp_path' => $data['pfp'],
+            'user_qualification_path' => $doc_path,
+            'user_pfp_path' => $pfp_path,
         ]);
     }
 }
