@@ -17,38 +17,64 @@
             <div class="text-2xl text-indigo-900">Profile <small class="pl-2 text-gray-500"></small></div>
 
             <div class="flex-col flex py-3">
-                <label class="pb-2 text-gray-700 font-semibold">Your Name</label>
-                <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="John">
+                <label class="pb-2 text-gray-700 font-semibold">First Name</label>
+                <input type="text" name="firstName"
+                       class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="John">
             </div>
 
             <div class="flex-col flex py-3">
-                <label class="pb-2 text-gray-700 font-semibold">Your Email</label>
-                <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="John@mail.com">
+                <label class="pb-2 text-gray-700 font-semibold">Last Name</label>
+                <input type="text" name="lastName"
+                       class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="Smith">
             </div>
 
             <div class="flex-col flex py-3">
-                <label class="pb-2 text-gray-700 font-semibold">How Many </label>
-                <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="2">
+                <label class="pb-2 text-gray-700 font-semibold">Email</label>
+                <input type="text" name='email' class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200"
+                       placeholder="John@mail.com">
             </div>
+
+            <div class="flex-col flex py-3">
+                <label class="pb-2 text-gray-700 font-semibold">TRN </label>
+                <input type="text" name='trn' class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200">
+            </div>
+
+            <div class="flex-col flex py-3">
+                <label class="pb-2 text-gray-700 font-semibold">Adress </label>
+                <input type="text" name='address'
+                       class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200">
+            </div>
+
+            <div class="flex-col flex py-3">
+                <label class="pb-2 text-gray-700 font-semibold">D.O.B </label>
+                <input type="date" name='DOB'
+                       class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200">
+            </div>
+
+            <label class="pb-2 text-gray-700 font-semibold">Upload credentials </label>
 
             <div class="overflow-hidden relative w-full mt-4 mb-4">
 
 
-                <input type="file" class="bg-red-500" name = "Upload credentials" value="Upload file" >
+                <input type="file" class="bg-red-500" name="credentials" >
+
+            </div>
+
+            <label class="pb-2 text-gray-700 font-semibold">Upload picture </label>
+
+            <div class="overflow-hidden relative w-full mt-4 mb-4">
+
+
+                <input type="file" class="bg-red-500" name="pfp">
 
             </div>
 
             <div class="flex-col flex py-3">
-                <label class="pb-2 text-gray-700 font-semibold">Your Invite Code <small>Blank if you have not recieved one</small></label>
-                <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="xxxx-xx">
 
                 <div class="mt-5 p-3 bg-red-400 text-white">
                     Invite Code Not Valid.
                 </div>
 
-                <div class="mt-5 p-3 bg-green-600 text-white">
-                    We Have Recieved Your Submission.
-                </div>
             </div>
 
             <div class="mt-2">
