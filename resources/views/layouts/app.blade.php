@@ -17,9 +17,9 @@
 
     <link href="{{asset('css/register.css')}}" rel="stylesheet">
 
-    @extends('layouts.app')
+{{--    @extends('layouts.app')--}}
 
-    @section('content')
+{{--    @section('content')--}}
 
 
 </head>

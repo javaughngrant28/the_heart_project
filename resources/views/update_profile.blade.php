@@ -14,7 +14,7 @@
     <div class="md:p-12 bg-indigo-100 flex flex-row flex-wrap">
         <form class="md:w-1/2-screen m-0 p-5 bg-white w-full tw-h-full shadow md:rounded-lg">
 
-            <div class="text-2xl text-indigo-900">Profile <small class="pl-2 text-gray-500"></small></div>
+            <div class="text-2xl text-indigo-900">Profile <small class="pl-2 text-gray-500">Any field can be empty and your information will be unchanged </small></div>
 
             <div class="flex-col flex py-3">
                 <label class="pb-2 text-gray-700 font-semibold">First Name</label>
@@ -78,7 +78,7 @@
             </div>
 
             <div class="mt-2">
-                <button class="p-3 bg-indigo-400 text-white w-full hover:bg-indigo-300">Submit Form</button>
+                <button class="p-3 bg-indigo-400 text-white w-full hover:bg-indigo-300">Submit changes</button>
             </div>
         </form>
     </div>
