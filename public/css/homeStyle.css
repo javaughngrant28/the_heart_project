@@ -90,9 +90,14 @@ nav {
 }
 
 
-.card {
+.cards {
     background-color: white;
     border: 3px solid white;
+}
+
+.card_r {
+    background-color: black;
+    border: 3px solid black;
 }
 
 /*-----------THE COURSES CARDS--------------------------*/
@@ -113,6 +118,15 @@ nav {
 .b_c{
     background-color: #F9F871;
     color: black;
+}
+
+.b_c_p{
+    color: white;
+}
+
+.b_c_p:hover{
+    background-color: #F9F871;
+    color: white;
 }
 /* --------------VIEW MORE COURSES BUTTON-------------------*/
 

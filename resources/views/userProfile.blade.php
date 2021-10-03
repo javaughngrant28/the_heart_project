@@ -13,14 +13,16 @@
 </head>
 
 
+
 <body>
 
+@if(auth::check())
 
-<form action="#" class="main_pro grid">
+
+<form action="#" class="main_pro grid ">
 
     <div class="gid i_one">
-
-
+        <img class = "w-full h-full" src="{{url(auth()->user()->user_pfp_path)}}" alt="profile picture">
     </div>
 
     {{--    ------------------- PROFILE PHOTO-----------------------}}
@@ -36,7 +38,7 @@
             </span>
 
             <span class=" w-full  flex justify-center items-center t_l">
-                Javaughn Grant
+                {{auth()->user()->f_name." ".auth()->user()->l_name}}
             </span>
 
         </div>
@@ -48,7 +50,7 @@
             </span>
 
             <span class=" w-full  flex justify-center items-center t_l">
-                Male
+                {{auth()->user()->gender}}
             </span>
 
         </div>
@@ -61,7 +63,7 @@
             </span>
 
             <span class=" w-full  flex justify-center items-center t_l">
-                24/02/2000
+                {{auth()->user()->d_o_b}}
             </span>
 
         </div>
@@ -74,7 +76,7 @@
             </span>
 
             <span class=" w-full  flex justify-center items-center t_l">
-                12345678901
+                {{auth()->user()->trn}}
             </span>
 
         </div>
@@ -87,12 +89,10 @@
             </span>
 
             <span class=" w-full  flex justify-center items-center t_l">
-                I live at my home
+                {{auth()->user()->address}}
             </span>
 
         </div>
-
-
 
 
         <div class="flex  rounded-b-full ">
@@ -102,11 +102,10 @@
             </span>
 
             <span class=" w-full  flex justify-center items-center t_l">
-                javaughngrant@gmail.com
+                {{auth()->user()->email}}
             </span>
 
         </div>
-
 
 
         <div class="flex  rounded-b-full ">
@@ -116,12 +115,10 @@
             </span>
 
             <span class=" w-full  flex justify-center items-center t_l">
-                x-xxx-xxx-xxxx
+                {{auth()->user()->tel_number}}
             </span>
 
         </div>
-
-
 
 
         <div class="flex  rounded-b-full ">
@@ -130,23 +127,26 @@
                 <p class="flex self-end font-bold ">Qualification</p>
             </span>
 
-            <span class=" w-full  flex justify-center items-center t_l">
-                myQualification.docx
+            <span class=" w-full  flex justify-center items-center t_l2 text-green-500">
+                qualification uploaded successfully
             </span>
 
         </div>
 
 
-
-
-
-
         <div class="flex h-8 justify-center items-center btn mt-1 bg-yellow-200 hover:bg-red-700 ">
-            update information
+            <a class = "w-full h-full flex justify-center
+            items-center" href="{{route('updateProfilePage')}}"> update information</a>
         </div>
 
         <div class="flex h-8 justify-center items-center btn mt-1 bg-yellow-200 hover:bg-green-400">
-            download information
+            <a download="{{auth()->user()->f_name."-".auth()->user()->l_name}} qualification " href="{{url(auth()->user()->user_qualification_path)}}" class = "w-full h-full flex justify-center
+            items-center">download qualification</a>
+        </div>
+
+        <div class="flex h-8 justify-center items-center btn mt-1 bg-black hover:bg-yellow-200">
+            <a class = "w-full h-full flex justify-center
+            items-center" href="{{route('home')}}">BACK</a>
         </div>
 
 
@@ -200,7 +200,7 @@
 
 {{------------- DIV THAT HOLDS THE PROFILE PHOTO AND BASIC INFORMATION-----------}}
 
-
+@endif
 </body>
 
 

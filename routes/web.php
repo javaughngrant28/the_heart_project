@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,14 @@ use App\Http\Controllers\ProfileController;
 //Route::get('/signUp',[LogInController::class,'loadSignUpView'])->name('signUpPage');
 
 Route::get('/profile',[ProfileController::class,'profileView'])->name('profilePage');
+
+Route::get('/create',[CourseController::class,'createView'])->name('createPage');
+
+Route::POST('/create',[CourseController::class,'createViewR'])->name('createPageR');
+
+Route::get('/updateProfile',[ProfileController::class,'updateProfileView'])->name('updateProfilePage');
+
+Route::POST('/updateProfile',[ProfileController::class,'updateProfileR'])->name('updateProfileR');
 
 Auth::routes();
 

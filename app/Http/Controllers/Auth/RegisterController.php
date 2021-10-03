@@ -73,6 +73,8 @@ class RegisterController extends Controller
 
             'pfp' => ['required', 'mimes:jpg,jpeg,png'],
         ]);
+
+
     }
 
 
@@ -84,8 +86,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $pfp_path = $data['pfp']->store('pictures_and_docs');
-        $doc_path = $data['qualification']->store('pictures_and_docs');
+        $pfp_path = $data['pfp']->store('public');
+        $doc_path = $data['qualification']->store('public');
         return User::create([
             'f_name' => $data['fist_name'],
             'l_name' => $data['last_name'],

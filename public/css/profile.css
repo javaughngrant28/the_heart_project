@@ -87,4 +87,13 @@ body{
 
 }
 
+.t_l2{
+    margin-top: 1rem;
+
+    background-color: #F1FBFF;
+    /*color: black;*/
+
+    pointer-events: none;
+}
+
 /*--THE ITEMS GOING INSIDE THE PROFILE GRID--*/
