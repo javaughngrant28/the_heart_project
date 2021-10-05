@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Null_;
 use App\Models\User;
+
 
 class ProfileController extends Controller
 {
 
     public function profileView()
     {
-        return view('userProfile');
+        $u_id = Auth()->User()->id;
+        $aly = User::find($u_id)->findCourse;
+//        return view('userProfile',['aly' =$aly ]);
+
+        return view('userProfile',['aly' =>$aly ]);
     }
 
     public function updateProfileView()

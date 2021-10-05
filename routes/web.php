@@ -31,6 +31,12 @@ Route::get('/create',[CourseController::class,'createView'])->name('createPage')
 
 Route::POST('/create',[CourseController::class,'createViewR'])->name('createPageR');
 
+Route::get('/course{id}',[CourseController::class,'courseView'])->name('coursePage');
+
+Route::get('/course/all',[CourseController::class,'allCourseView'])->name('allCoursePage');
+
+Route::POST('/course',[CourseController::class,'courseViewR'])->name('coursePageR');
+
 Route::get('/updateProfile',[ProfileController::class,'updateProfileView'])->name('updateProfilePage');
 
 Route::POST('/updateProfile',[ProfileController::class,'updateProfileR'])->name('updateProfileR');
@@ -38,5 +44,7 @@ Route::POST('/updateProfile',[ProfileController::class,'updateProfileR'])->name(
 Auth::routes();
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/aboutUs', [\App\Http\Controllers\HomeController::class, 'aboutUsView'])->name('aboutUs');
 
 

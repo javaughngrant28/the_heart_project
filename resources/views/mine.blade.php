@@ -14,6 +14,7 @@
 
 <body>
 
+
 <div class=" grid screen_div">
     {{----------------------------This contains the navigation bar!!--------------------------------------}}
     <nav class=" w-full grid ">
@@ -85,7 +86,7 @@
                     {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
 
                     <button class=' h-8 b_c hover:text-white flex font-extrabold text-white btn w-full
-                bg-green-400 items-center justify-center'><a class = "flex justify-center items-center
+                bg-green-400 items-center justify-center'><a class="flex justify-center items-center
                 w-full h-full" href="{{route('register')}}">REGISTER</a></button>
 
                     {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
@@ -107,7 +108,7 @@
                     {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
 
                     <button class=' h-8 b_c_p  hover:text-white flex font-extrabold text-white btn w-full
-                 items-center justify-center'><a class = "flex w-full h-full justify-center items-center"
+                 items-center justify-center'><a class="flex w-full h-full justify-center items-center"
                                                  href="{{route('profilePage')}}">VIEW PROFILE</a>
                     </button>
 
@@ -122,38 +123,45 @@
         </div>
 
 
-        <div class="card cards w-full h-full">
+        @foreach($course as $index => $value)
+            @if($value['is_featured'])
+            <div class="card cards w-full h-full">
 
-            <div class="flex h-full w-full flex-col justify-end">
 
-                {{--                TODO ADD program name and style crard--}}
-                <div style="background-image: url('https://source.unsplash.com/random')" class=" flex justify-center
+                <div class="flex h-full w-full flex-col justify-end">
+
+
+                    <div style="background-image: url('{{$value['c_photo']}}')" class=" flex  bg-no-repeat bg-cover
+                     justify-center
                 items-center h-full"><span style="font-size: 2rem" class="font-extrabold pointer-events-none
-                text-black">PROGRAM NAME</span>
+                text-black">{{strtoupper($value['c_name'])}}</span>
+                    </div>
+
+                    {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
+
+                    <button class=' h-8 b_c hover:text-white flex font-extrabold text-white btn w-full
+                bg-green-400 items-center justify-center'><a href="{{route('coursePage',$value['id'])}}" class="flex justify-center items-center
+                w-full h-full">VIEW</a>
+                    </button>
+
+                    {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
+
                 </div>
 
-                {{--                THE THE IMAGE THAT GETS THE DISPLAYED ABOUT THE COURSE BEING ADVERTISED WHIT THE NAME --}}
 
-                <button class=' h-8 b_c hover:text-white flex font-extrabold text-white btn w-full
-                bg-green-400 items-center justify-center'><a href="#" class = "flex justify-center items-center
-                w-full h-full">VIEW</a>
-                </button>
-
-                {{--------   THE THIS IS THE VIEW BUTTON THAT WILL LEAD YOU TO THE COURSE DETAILS---------}}
+                {{-------------THIS IS THE IMAGE THAT WILL BE DISPLAYED ON THE ADVERTISEMENT CARD---------------}}
 
             </div>
-
-            {{-------------THIS IS THE IMAGE THAT WILL BE DISPLAYED ON THE ADVERTISEMENT CARD---------------}}
-
-        </div>
+            @endif
+        @endforeach
 
 
     </div>
 
 
     <div class="mid_lower">
-        <a class="btn hover:text-white flex font-extrabold text-white b_c h-full flex justify-center items-center">VIEW
-            ALL</a>
+        <a class="btn h-full w-full hover:text-white flex font-extrabold text-white b_c h-full flex
+        justify-center items-center" href="{{route('allCoursePage')}}">VIEW ALL</a>
     </div>
 
 </div>

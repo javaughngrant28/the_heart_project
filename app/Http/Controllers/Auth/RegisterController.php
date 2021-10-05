@@ -67,7 +67,7 @@ class RegisterController extends Controller
 
             'f_number' => ['required', 'min:7','regex:/^[-0-9\+]+$/'],
 
-            'gender' => ['required'] ,
+            'gender' => ['required','Max:6'],
 
             'qualification' => ['required','mimes:doc,docx,dot'],
 

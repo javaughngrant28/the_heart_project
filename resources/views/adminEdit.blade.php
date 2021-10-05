@@ -13,7 +13,7 @@
 <body>
 
 
-<!-- component -->
+
 <div class="relative min-h-screen flex items-center justify-center
 py-12 px-4 sm:px-6 lg:px-8 items-center">
 
@@ -22,15 +22,17 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
         <div class="grid  gap-8 grid-cols-1">
             <div class="flex flex-col ">
                 <div class="flex flex-col sm:flex-row items-center">
-                    <h2 class="font-semibold text-lg mr-auto text-gray-700">Edit course</h2>
+                    <h2 class="font-semibold text-lg mr-auto text-gray-700">Create course</h2>
                     <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
                 </div>
                 <div class="mt-5">
-                    <form>
+                    <form action="{{route('createPageR')}}" enctype="multipart/form-data" method = POST>
+
+                        @csrf
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Course Image</label>
                             <div class="flex items-center py-6">
-                               <input class = "text-gray-500" type="file" name="course_img">
+                                <input class="text-gray-500" type="file" name="course_img">
                             </div>
                         </div>
 
@@ -38,7 +40,7 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Price</label>
                             <div class="flex items-center py-6">
-                                <input class = " border-2 rounded-l w-full text-black" type="number" name="money">
+                                <input class=" border-2 rounded-l w-full text-black" type="number" name="money">
                             </div>
                         </div>
 
@@ -46,7 +48,7 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Name</label>
                             <div class="flex items-center py-6">
-                                <input class = " border-2 rounded-l w-full text-black" type="text" name="c_name">
+                                <input class=" border-2 rounded-l w-full text-black" type="text" name="c_name">
                             </div>
                         </div>
 
@@ -61,7 +63,7 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">start date</label>
                             <div class="flex items-center py-6">
-                                <input class = "border-2 rounded-l w-full text-black" type="date" name="c_start">
+                                <input class="border-2 rounded-l w-full text-black" type="date" name="c_start">
                             </div>
                         </div>
 
@@ -69,16 +71,15 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">end date</label>
                             <div class="flex items-center py-6">
-                                <input class = "border-2 rounded-l w-full text-black" type="date" name="c_end">
+                                <input class="border-2 rounded-l w-full text-black" type="date" name="c_end">
                             </div>
                         </div>
-
 
 
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Format</label>
                             <div class="flex items-center py-6">
-                                <input class = "border-2 rounded-l w-full text-black" type="text" name="c_format">
+                                <input class="border-2 rounded-l w-full text-black" type="text" name="c_format">
                             </div>
                         </div>
 
@@ -86,16 +87,23 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Awards</label>
                             <div class="flex items-center py-6">
-                                <input class = "border-2 rounded-l w-full text-black" type="text" name="c_awards">
+                                <input class="border-2 rounded-l w-full text-black" type="text" name="c_awards">
+                            </div>
+                        </div>
+
+                        <div class="md:space-y-2 mb-3">
+                            <label class="text-xs font-semibold text-gray-600 py-2">Featured</label>
+                            <div class="flex justify-start items-start py-6">
+                                <input class="border-2 rounded-l flex text-black" type="checkbox" name="featured">
                             </div>
                         </div>
 
 
                         <div class="flex-auto w-full mb-1 text-xs space-y-2">
                             <label class="font-semibold text-gray-600 py-2">Course description</label>
-                            <textarea name="message" id=""
+                            <textarea name="c_description" id=""
                                       class="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg  py-4 px-4"
-                                       spellcheck="true"></textarea>
+                                      spellcheck="true"></textarea>
                         </div>
 
                         <div class="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">

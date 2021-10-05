@@ -24,6 +24,7 @@ class CreateCoursesTable extends Migration
             $table->string('description');
             $table->string('location');
             $table->string('c_photo');
+            $table->boolean('is_featured');
             $table->timestamps();
         });
     }

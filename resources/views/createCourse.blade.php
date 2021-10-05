@@ -6,14 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
-    <title>edit</title>
+    <title>create</title>
 </head>
 
 
 <body>
 
 
-<!-- component -->
+
 <div class="relative min-h-screen flex items-center justify-center
 py-12 px-4 sm:px-6 lg:px-8 items-center">
 
@@ -88,6 +88,13 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                             <label class="text-xs font-semibold text-gray-600 py-2">Awards</label>
                             <div class="flex items-center py-6">
                                 <input class="border-2 rounded-l w-full text-black" type="text" name="c_awards">
+                            </div>
+                        </div>
+
+                        <div class="md:space-y-2 mb-3">
+                            <label class="text-xs font-semibold text-gray-600 py-2">Featured</label>
+                            <div class="flex justify-start items-start py-6">
+                                <input class="border-2 rounded-l flex text-black" type="checkbox" name="featured">
                             </div>
                         </div>
 

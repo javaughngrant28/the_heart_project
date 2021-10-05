@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use App\Models\Course;
+
+Use App\Models\Application;
 
 class CourseController extends Controller
 {
@@ -13,9 +16,58 @@ class CourseController extends Controller
         return view('createCourse');
     }
 
-     public function createViewR(Request $req)
+    public function courseView($id)
+    {
+
+        $aly = Course::find($id)->findUsers;
+
+        $course =Course::find($id);
+        return view('course',['course'=>$course,'aly'=>$aly]);
+    }
+
+
+
+    public function allCourseView()
+    {
+
+        $course = Course::get();
+        return view('courseList',['course'=>$course]);
+    }
+
+
+
+
+    public function courseViewR(Request $req)
+    {
+        if($req->input('back'))
+        {
+            return redirect(route('home'));
+        }else
+        {
+            Application::create([
+                'user_id' => auth()->user()->id,
+                'course_id' => $req->c_id,
+            ]);
+
+            return redirect(route('coursePage',$req->c_id));
+        }
+
+    }
+
+
+
+
+    public function createViewR(Request $req)
     {
         $img_path = $req->file('course_img')->store('public');
+        if($req->featured != NULL)
+        {
+            $featured = TRUE;
+        }else
+        {
+            $featured = FALSE;
+        }
+
         Course::create([
             'c_name' => $req->c_name,
             'c_price' => $req->money,
@@ -26,8 +78,9 @@ class CourseController extends Controller
             'description' => $req->c_description,
             'location' => $req->c_location,
             'c_photo' => $img_path,
+            'is_featured' => $featured,
         ]);
-        return "doone";
+        return redirect(route('home'));
     }
 
 
