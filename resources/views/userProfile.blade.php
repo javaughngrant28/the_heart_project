@@ -56,7 +56,7 @@
 
 
             <div class="flex  rounded-b-full ">
-
+x
             <span class=" w-2/5 flex flex-col justify-center t_r ">
                 <p class="flex self-end font-bold ">Birth Date</p>
             </span>

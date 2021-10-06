@@ -11,8 +11,6 @@
 
 <body>
 
-
-<!-- component -->
 <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap w-full mb-8">
@@ -25,21 +23,64 @@
         <div class="flex flex-wrap -m-4 text-center w-full justify-center">
             <div class="p-4 sm:w-1/4 w-1/2">
                 <div style="background-color: #8FB8EE" class=" rounded-lg p-2 xl:p-6">
-                    <h2 style="color: #F9F871" class="title-font font-medium sm:text-4xl text-3xl ">1</h2>
+                    @php
+
+                        $count = 0;
+                            foreach ($pending_users as $key => $value)
+        {
+            if($value['app_status']=='pending')
+            {
+                ++$count;
+            }
+        }
+
+                    @endphp
+
+                    <h2 style="color: #F9F871" class="title-font font-medium sm:text-4xl text-3xl ">{{$count}}</h2>
                     <p class="leading-relaxed text-white font-bold">Pending users</p>
                 </div>
             </div>
 
-            <div class="p-4 sm:w-1/4 w-1/2">
-                <div style="background-color: #8FB8EE" class=" rounded-lg p-2 xl:p-6">
-                        <h2 style="color: #F9F871" class="title-font font-medium sm:text-4xl text-3xl ">2</h2>
-                    <p class="leading-relaxed text-white font-bold">Enrolled</p>
-                </div>
-            </div>
+
+            @php
+
+                $count2 = 0;
+                    foreach ($course as $key2 => $value2)
+{
+    if($value2['c_name'])
+    {
+        ++$count2;
+    }
+}
+
+            @endphp
+
 
             <div class="p-4 sm:w-1/4 w-1/2">
                 <div style="background-color: #8FB8EE" class=" rounded-lg p-2 xl:p-6">
-                    <h2 style="color: #F9F871" class="title-font font-medium sm:text-4xl text-3xl ">3</h2>
+                    <h2 style="color: #F9F871" class="title-font font-medium sm:text-4xl text-3xl ">{{$count2}}</h2>
+                    <p class="leading-relaxed text-white font-bold">Courses</p>
+                </div>
+            </div>
+
+
+            @php
+
+                $count3 = 0;
+                    foreach ($all_users as $key3 => $value3)
+{
+    if($value3['f_name'])
+    {
+        ++$count3;
+    }
+}
+
+            @endphp
+
+
+            <div class="p-4 sm:w-1/4 w-1/2">
+                <div style="background-color: #8FB8EE" class=" rounded-lg p-2 xl:p-6">
+                    <h2 style="color: #F9F871" class="title-font font-medium sm:text-4xl text-3xl ">{{$count3}}</h2>
                     <p class="leading-relaxed text-white font-bold">Total Users</p>
                 </div>
             </div>
@@ -49,27 +90,28 @@
 </section>
 
 
-<!-- component -->
 <form
     class="container mb-2 flex mx-auto w-full items-center justify-center"
 >
     <ul class="flex flex-col p-4 w-1/2">
         <li class="border-gray-400 flex flex-row">
             <div style="background-color: #8FB8EE; cursor: pointer;"
-                class="select-none flex flex-1 items-center p-4 hover: rounded-2xl border-2 p-6
+                 class="select-none flex flex-1 items-center p-4 hover: rounded-2xl border-2 p-6
                 hover:shadow-2xl border-yellow-200"
             >
-                <button type="submit"  class="flex-1 pl-1 mr-16">
-                    <div  class=" flex font-medium text-gray-700 justify-center items-center ">
-                       course Name
+                @foreach($course as $index => $values)
+                <a href="{{route('coursePage',$values['id'])}}" class="flex-1 pl-1 mr-16">
+                    <div class=" flex font-medium text-gray-700 justify-center items-center ">
+                        {{$values['c_name']}}
                     </div>
-                </button>
+                </a>
+                @endforeach
+
             </div>
         </li>
 
     </ul>
 </form>
-
 
 
 </body>

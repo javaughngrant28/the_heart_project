@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Application;
 
 class HomeController extends Controller
 {
@@ -27,7 +29,10 @@ class HomeController extends Controller
         $course = Course::get();
         if(auth()->check() and auth()->user()->is_admin)
         {
-            return view('adminDash',['course'=>$course]);
+            $pending_users = Application::get('app_status');
+            $all_users = User::get();
+            return view('adminDash',['course'=>$course,'pending_users'=>$pending_users,'all_users'=>$all_users]);
+
         }
 
         return view('mine',['course'=>$course]);

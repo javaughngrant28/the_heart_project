@@ -25,7 +25,7 @@
 
         <div class="flex flex-wrap w-full mb-8">
             <div class="w-full mb-6 lg:mb-0">
-                <h1  class="sm:text-4xl text-5xl font-bold font-medium title-font mb-2 text-white">Courses</h1>
+                <h1  class="sm:text-4xl text-5xl font-bold font-medium title-font mb-2 text-white">Gallery of Courses</h1>
                 <div style="background-color: #8FB8EE;" class="h-1 w-20 rounded"></div>
             </div>
         </div>
