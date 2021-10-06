@@ -13,6 +13,11 @@
 
 <body>
 
+<div class="flex h-8 w-full justify-center items-center btn rounded-none bg-blue-300 fixed z-10 hover:bg-yellow-200">
+    <a class="w-full h-full flex justify-center
+            items-center" href="{{route('home')}}">HOME</a>
+</div>
+
 
 <section class="text-white body-font">
     <div class="container px-5 py-24 mx-auto">
