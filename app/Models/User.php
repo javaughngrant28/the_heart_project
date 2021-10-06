@@ -59,6 +59,6 @@ class User extends Authenticatable
     protected function findCourse()
     {
         return $this->belongsToMany(Course::class,'applications','user_id','course_id')
-            ->select('c_name','app_status','payment_status');
+            ->select('c_name','app_status','payment_status')->withPivot('app_id');
     }
 }

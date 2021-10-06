@@ -27,11 +27,23 @@ use App\Http\Controllers\CourseController;
 
 Route::get('/profile',[ProfileController::class,'profileView'])->name('profilePage');
 
+Route::get('/pay',[CourseController::class,'payView'])->name('payPage');
+
+Route::POST('/pay',[CourseController::class,'payViewR'])->name('payPageR');
+
 Route::get('/create',[CourseController::class,'createView'])->name('createPage');
 
 Route::POST('/create',[CourseController::class,'createViewR'])->name('createPageR');
 
 Route::get('/course{id}',[CourseController::class,'courseView'])->name('coursePage');
+
+Route::get('/update/course/status{val}',[CourseController::class,'updateCourseView'])->name('updateCoursePage');
+
+Route::get('/course/edit{id}',[CourseController::class,'courseEditView'])->name('editCourse');
+
+Route::get('/student/profile{id}',[ProfileController::class,'studentProfileView'])->name('studentProfile');
+
+Route::POST('/course/edit{id}',[CourseController::class,'courseEditViewR'])->name('saveEditCourse');
 
 Route::get('/course/all',[CourseController::class,'allCourseView'])->name('allCoursePage');
 

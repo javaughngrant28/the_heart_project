@@ -25,6 +25,14 @@ class ProfileController extends Controller
         return view('update_profile');
     }
 
+    public function studentProfileView($id)
+    {
+        $u_id = $id;
+        $aly = User::find($u_id)->findCourse;
+
+        return view('userProfile',['aly' =>$aly ]);
+    }
+
     public function updateProfileR(Request $req)
     {
         $val =$req->validate([

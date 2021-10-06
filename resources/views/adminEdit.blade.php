@@ -13,7 +13,6 @@
 <body>
 
 
-
 <div class="relative min-h-screen flex items-center justify-center
 py-12 px-4 sm:px-6 lg:px-8 items-center">
 
@@ -26,7 +25,7 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                     <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
                 </div>
                 <div class="mt-5">
-                    <form action="{{route('createPageR')}}" enctype="multipart/form-data" method = POST>
+                    <form action="{{route('saveEditCourse',$course['id'])}}" enctype="multipart/form-data" method = POST>
 
                         @csrf
                         <div class="md:space-y-2 mb-3">
@@ -40,7 +39,8 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Price</label>
                             <div class="flex items-center py-6">
-                                <input class=" border-2 rounded-l w-full text-black" type="number" name="money">
+                                <input value="{{$course['c_price']}}" class=" border-2 rounded-l w-full text-black"
+                                       type="number" name="money">
                             </div>
                         </div>
 
@@ -48,14 +48,16 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Name</label>
                             <div class="flex items-center py-6">
-                                <input class=" border-2 rounded-l w-full text-black" type="text" name="c_name">
+                                <input value="{{$course['c_name']}}" class=" border-2 rounded-l w-full text-black"
+                                       type="text" name="c_name">
                             </div>
                         </div>
 
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Location</label>
                             <div class="flex items-center py-6">
-                                <input class=" border-2 rounded-l w-full text-black" type="text" name="c_location">
+                                <input value="{{$course['location']}}" class=" border-2 rounded-l w-full text-black"
+                                       type="text" name="c_location">
                             </div>
                         </div>
 
@@ -63,7 +65,8 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">start date</label>
                             <div class="flex items-center py-6">
-                                <input class="border-2 rounded-l w-full text-black" type="date" name="c_start">
+                                <input value="{{$course['start_date']}}" class="border-2 rounded-l w-full text-black"
+                                       type="date" name="c_start">
                             </div>
                         </div>
 
@@ -71,7 +74,8 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">end date</label>
                             <div class="flex items-center py-6">
-                                <input class="border-2 rounded-l w-full text-black" type="date" name="c_end">
+                                <input value="{{$course['end_date']}}" class="border-2 rounded-l w-full text-black"
+                                       type="date" name="c_end">
                             </div>
                         </div>
 
@@ -79,7 +83,8 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Format</label>
                             <div class="flex items-center py-6">
-                                <input class="border-2 rounded-l w-full text-black" type="text" name="c_format">
+                                <input value="{{$course['format']}}" class="border-2 rounded-l w-full text-black"
+                                       type="text" name="c_format">
                             </div>
                         </div>
 
@@ -87,23 +92,35 @@ py-12 px-4 sm:px-6 lg:px-8 items-center">
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Awards</label>
                             <div class="flex items-center py-6">
-                                <input class="border-2 rounded-l w-full text-black" type="text" name="c_awards">
+                                <input value="{{$course['award']}}" class="border-2 rounded-l w-full text-black"
+                                       type="text" name="c_awards">
                             </div>
                         </div>
 
                         <div class="md:space-y-2 mb-3">
                             <label class="text-xs font-semibold text-gray-600 py-2">Featured</label>
                             <div class="flex justify-start items-start py-6">
-                                <input class="border-2 rounded-l flex text-black" type="checkbox" name="featured">
+
+                                @if($course['is_featured'] == 1)
+                                    <input checked   class="border-2 rounded-l flex text-black"
+                                           type="checkbox" name="featured">
+
+                                @else
+                                    <input class="border-2 rounded-l flex text-black"
+                                           type="checkbox" name="featured">
+                                @endif
+
                             </div>
                         </div>
 
 
                         <div class="flex-auto w-full mb-1 text-xs space-y-2">
                             <label class="font-semibold text-gray-600 py-2">Course description</label>
-                            <textarea name="c_description" id=""
-                                      class="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg  py-4 px-4"
-                                      spellcheck="true"></textarea>
+                            <textarea name="c_description"
+                                      class="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-black border border-grey-lighter rounded-lg  py-4 px-4"
+                                      spellcheck="true">
+                                {{$course['description']}}
+                            </textarea>
                         </div>
 
                         <div class="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">

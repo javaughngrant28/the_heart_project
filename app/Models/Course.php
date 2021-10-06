@@ -31,7 +31,7 @@ class Course extends Model
     protected function findUsers()
     {
        return $this->belongsToMany(User::class,'applications','course_id','user_id')
-           ->select('id')->withPivot('course_id','app_status','payment_status');/*->withPivot('app_status','payment_status')
+           ->select('id','f_name','l_name')->withPivot('course_id','app_status','payment_status');/*->withPivot('app_status','payment_status')
            ->select('course_id','user_id','app_status','payment_status');*/
     }
 

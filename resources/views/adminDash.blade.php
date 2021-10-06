@@ -6,17 +6,54 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
+    <link href="{{asset('css/register.css')}}" rel="stylesheet">
     <title>List</title>
+
+
 </head>
 
 <body>
 
+
+
 <section class="text-gray-600 body-font">
+
+    <header class="navBar py-6">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div>
+                <a href="{{ url('/') }}" class="text-lg font-semibold text-white no-underline">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+            </div>
+            <nav class="space-x-4 text-white text-sm sm:text-base">
+                @guest
+                    <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    @if (Route::has('register'))
+                        <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    @endif
+                @else
+                    <span>{{ Auth::user()->name }}</span>
+
+                    <a href="{{ route('logout') }}"
+                       class="no-underline hover:underline"
+                       onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        {{ csrf_field() }}
+                    </form>
+                @endguest
+            </nav>
+        </div>
+    </header>
+
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap w-full mb-8">
             <div class="w-full mb-6 lg:mb-0">
                 <h1 class="sm:text-4xl text-5xl font-medium title-font mb-2 text-white">Admin dashboard</h1>
-                <div style="background-color: #8FB8EE" class="h-1 w-20 rounded"></div>
+                <div style="background-color: #8FB8EE" class="h-1 w-20 rounded">
+
+                </div>
             </div>
         </div>
 

@@ -21,6 +21,7 @@
                 PRICE: <span style="color: #F9F871" class="font-medium"> {{$course['c_price']}}JMD</span>
             </p>
         </div>
+
         <p class="text-sm text-gray-700 mt-4">
             {{$course['description']}}
         </p>
@@ -62,7 +63,7 @@
 
                if(auth()->check()){
 
-               foreach($aly as $key => $value)
+               foreach($apply as $key => $value)
         {
 
             if($value['pivot']['user_id'] == Auth()->user()->id){
@@ -80,14 +81,16 @@
 
             @if(auth()->check() and auth()->user()->is_admin)
 
-                <button class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">Edit</button>
+                <button class=" bg-gray-200 text-blue-600 px-2 py-2 rounded-md mr-2">
+                    <a href="{{route('editCourse',$c_id)}}" class="h-full w-full">Edit</a>
+                </button>
 
             @elseif($isThere == True)
                 <button class=" pointer-events-none bg-gray-600 text-white px-2 py-2 rounded-md ">{{$apt}}</button>
 
             @elseif(!auth()->check())
                 <a href="{{route('login')}}"
-                        class=" bg-green-600 text-gray-200 px-2 py-2 rounded-md ">
+                   class=" bg-green-600 text-gray-200 px-2 py-2 rounded-md ">
                     Apply
                 </a>
 
@@ -105,7 +108,7 @@
 
 </div>
 
-<!-- component -->
+
 <div class="text-gray-900 bg-gray-200">
     <div class="p-4 flex">
         <h1 class="text-3xl">
@@ -117,29 +120,30 @@
             <tbody>
             <tr class="border-b">
                 <th class="text-left p-3 px-5">Name</th>
-                <th class="text-left p-3 px-5">status</th>
+                <th class="text-left p-3 px-5">Application status</th>
+                <th class="text-left p-3 px-5">payment status</th>
                 <th class="text-left p-3 px-5"></th>
             </tr>
-            <tr class="border-b hover:bg-orange-100 bg-gray-100">
+            @foreach($apply as $indexx => $values )
+            <tr class="border-b hover:bg-blue-400 bg-gray-100">
 
-                <td class="p-3 px-5">web dev</td>
 
-                <td class="p-3 px-5">pending</td>
 
-                <td class="p-3 px-5 flex justify-end">
-                    <button type="button"
-                            class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">
-                        Approve
-                    </button>
+                    <td class="p-3 px-5">{{$values['f_name'].' '.$values['l_name']}}</td>
 
-                    <button type="button"
-                            class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">
-                        Decline
-                    </button>
+                    <td class="p-3 px-5">{{$value['pivot']['app_status']}}</td>
 
-                </td>
+                    <td class="p-3 px-5">{{$value['pivot']['payment_status']}}</td>
 
-            </tr>
+                    <td class="p-3 px-5"> <a href="{{route('studentProfile',$values['id'])}}">
+                            <button class = 'btn bg-black text-white px-2 py-2 rounded-md mr-2 hover:bg-yellow-300'>
+                                VIEW
+                            </button>
+                        </a></td>
+
+                </tr>
+            @endforeach
+
 
             </tbody>
         </table>
